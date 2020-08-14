@@ -1,6 +1,8 @@
 //ARQUIVO DE ROTAS. AQUI QUE IREMOS PUXAR TODAS AS TELAS QUE VAMOS UTILIZA E COLOCAR AS DEVIDAS ROTAS PARA FUNCIONAR AQUI
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+
+import RouteHandler from './components/RouteHandler';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -13,24 +15,27 @@ export default () => {
     return (
         //Acessando telas do sistema com o Route
         <Switch> 
-            <Route exact path="/">
+            <RouteHandler exact path="/">
                 <Home />
-            </Route>
-            <Route exact path="/about">
+            </RouteHandler>
+            <RouteHandler exact path="/about">
                 <About />
-            </Route>
-            <Route exact path="/signin">
+            </RouteHandler>
+            <RouteHandler exact path="/signin">
                 <SignIn />
-            </Route>
-            <Route exact path="/signup">
+            </RouteHandler>
+            <RouteHandler exact path="/signup">
                 <SignUp />
-            </Route>
-            <Route exact path="/ad/:id">
+            </RouteHandler>
+            <RouteHandler exact path="/ad/:id">
                 <AdPage />
-            </Route>
-            <Route>
+            </RouteHandler>
+            <RouteHandler private exact path="/post-an-ad">
+                <About />
+            </RouteHandler>
+            <RouteHandler>
                 <NotFound />
-            </Route>
+            </RouteHandler>
         </Switch>
     );
 }
