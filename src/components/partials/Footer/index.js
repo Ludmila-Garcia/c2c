@@ -4,7 +4,7 @@ import { FooterArea } from './styled';
 const Footer = () => {
     return (
         <FooterArea>
-            NADA AQUI NO RODAPÉ 33
+            TESTE 27/10 NADA AQUI NO RODAPÉ 33
         </FooterArea>
     );
 }
